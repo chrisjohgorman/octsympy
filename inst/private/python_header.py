@@ -1,4 +1,4 @@
-# Copyright (C) 2014-2017 Colin B. Macdonald
+# Copyright (C) 2014-2017, 2019 Colin B. Macdonald
 # Free Software without warranty, GPL-3.0+: see python_header.m
 
 # In some cases this code is fed into stdin: two blank lines between
@@ -67,13 +67,6 @@ try:
         else:
             bins = "".join(chr(int(s[x:x+2], 16)) for x in range(0, len(s), 2))
         return struct.unpack(">d", bins)[0]
-    def dictdiff(a, b):
-        """ keys from a that are not in b, used by evalpy() """
-        n = dict()
-        for k in a:
-            if not k in b:
-                n[k] = a[k]
-        return n
     def Version(v):
         # short but not quite right: https://github.com/cbm755/octsympy/pull/320
         return LooseVersion(v.replace('.dev', ''))

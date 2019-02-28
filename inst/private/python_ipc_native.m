@@ -1,4 +1,4 @@
-%% Copyright (C) 2016, 2018 Colin B. Macdonald
+%% Copyright (C) 2016, 2018-2019 Colin B. Macdonald
 %% Copyright (C) 2016 Abhinav Tripathi
 %%
 %% This file is part of OctSymPy.
@@ -81,13 +81,6 @@ function [A, info] = python_ipc_native(what, cmd, varargin)
                     'import itertools'
                     'import collections'
                     'from re import split'
-                    'def dictdiff(a, b):'
-                    '    """ keys from a that are not in b, used by evalpy() """'
-                    '    n = dict()'
-                    '    for k in a:'
-                    '        if not k in b:'
-                    '            n[k] = a[k]'
-                    '    return n'
                     'def Version(v):'
                     '    # short but not quite right: https://github.com/cbm755/octsympy/pull/320'
                     '    return LooseVersion(v.replace(".dev", ""))'
