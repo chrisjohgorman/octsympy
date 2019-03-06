@@ -15,6 +15,8 @@ octsympy 2.7.2-dev
 
   * `subs(f)` now works: it finds values from the workspace.
 
+  * Remove deprecated `evalpy` utility.
+
   * Bug fixes and documentation updates.
 
 
