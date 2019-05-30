@@ -13,7 +13,7 @@ Checklist
 
   * Update sympref.m:
 
-      - update version number (remove "-dev", check if bump needed).
+      - update version number (remove "+", check if bump needed).
 
   * Update DESCRIPTION file (version number and date).
 
@@ -30,7 +30,7 @@ Checklist
 
       - make_windows_package.sh, use "day-to-day testing" mode.
         Run this script "out of tree", it will clone a clean copy.
-        Make sure py2exe and sympy are the most recent versions.
+        Make sure py2exe, mpmath, sympy are the most recent versions.
 
   * Test regenerating html documentation: "make html"
 
@@ -46,6 +46,8 @@ Checklist
     tarball and md5sums.
 
   * Update 2017-07: tagging now happens after review, by admins!
+
+      - Ticket should include the git hash to be tagged.
 
       - If packages seem ok, admin/reviewer will tag with:
 
@@ -69,11 +71,6 @@ Checklist
 AFTER release
 =============
 
-  * Bump version to the next anticipated version and append "-dev" in
-    in sympref.m.  See
-    [PEP 440](https://www.python.org/dev/peps/pep-0440).
+  * Bump version by appending "+" in sympref.m and DESCRIPTION.
 
   * Optionally, update the make_windows_bundle script.
-
-  * Leave old version in DESCRIPTION ("-dev" not supported here).  We
-    will bump it at the next release.  FIXME: this is unfortunate.

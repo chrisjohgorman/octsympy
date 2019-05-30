@@ -1,4 +1,4 @@
-%% Copyright (C) 2014, 2016-2017 Colin B. Macdonald
+%% Copyright (C) 2014, 2016-2017, 2019 Colin B. Macdonald
 %%
 %% This file is part of OctSymPy.
 %%
@@ -35,6 +35,11 @@
 
 
 function z = mat_rclist_asgn(A, r, c, B)
+
+  if (isempty (r) && isempty (c) && (isempty (B) || isscalar (B)))
+    z = A;
+    return
+  end
 
   if ~( isvector(r) && isvector(c) && (length(r) == length(c)) )
     error('this routine is for a list of rows and cols');
@@ -81,33 +86,3 @@ function z = mat_rclist_asgn(A, r, c, B)
   %        'AA[r, c] = b'
   %        'return AA,' };
 end
-
-
-%% Note: tests in @sym/private/ not executed
-% To run these in the test suite, you could move this mfile up to @sym.
-% However, note these are generally tested elsewhere indirectly.
-
-%!shared A, B
-%! B = [1 2 3; 4 5 6];
-%! A = sym(B);
-%!test
-%! C = B; C([1 6]) = [8 9];
-%! assert (isequal (mat_rclist_asgn(A,[1 2],[1 3],sym([8 9])), C))
-
-%!test
-%! % rhs scalar
-%! C = B; C([1 6]) = 88;
-%! assert (isequal (mat_rclist_asgn(A,[1 2],[1 3],sym(88)), C))
-
-%!test
-%! % If rhs is not a vector, make sure col-based access works
-%! rhs = [18 20; 19 21];
-%! C = B; C([1 2 3 4]) = rhs;
-%! D = mat_rclist_asgn(A,[1 2 1 2],[1 1 2 2],sym(rhs));
-%! assert (isequal (D, C))
-
-%!test
-%! % Growth
-%! C = B; C(1,5) = 10;
-%! D = mat_rclist_asgn(A,1,5,sym(10));
-%! assert (isequal (D, C))

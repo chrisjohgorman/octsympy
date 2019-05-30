@@ -1,13 +1,23 @@
-octsympy 2.7.2-dev
-==================
+octsympy 2.8.0+
+===============
+
+  * Remove deprecated `evalpy` utility.
+
+
+
+octsympy 2.8.0 (2019-04-30)
+===========================
 
   * New symbolic commands:
 
           eval
           ezmesh
           find
+          sinc
 
-  * Update minimum versions of SymPy to 1.1.1 and Octave to 4.2.
+  * Update minimum versions of SymPy to 1.2 and Octave to 4.2.
+
+  * Fixes for SymPy 1.4.
 
   * Newer SymPy versions improve QR and LU on non-square matrices.
 
@@ -15,9 +25,11 @@ octsympy 2.7.2-dev
 
   * `subs(f)` now works: it finds values from the workspace.
 
-  * Remove deprecated `evalpy` utility.
+  * `gammainc` now regularized correctly.
 
-  * Bug fixes and documentation updates.
+  * `lambertw` has more consistent printing.
+
+  * Other bug fixes and documentation updates.
 
 
 

@@ -1,6 +1,6 @@
 Name: symbolic
-Version: 2.7.1
-Date: 2018-10-02
+Version: 2.8.0+
+Date: 2019-05-15
 Author: Colin B. Macdonald <cbm@m.fsf.org>
 Maintainer: Colin B. Macdonald <cbm@m.fsf.org>
 Title: Octave Symbolic Package using SymPy
@@ -12,5 +12,5 @@ Description: Adds symbolic calculation features to GNU Octave.  These
 Categories: symbolic
 Url: https://octave.sourceforge.io/symbolic
 Depends: octave (>= 4.2)
-SystemRequirements: python, sympy (>= 1.1.1)
-License: GPL-3.0+
+SystemRequirements: python, sympy (>= 1.2)
+License: GPL-3.0-or-later
