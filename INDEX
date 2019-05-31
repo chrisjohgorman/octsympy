@@ -353,5 +353,4 @@ Class for symbolic functions
 Miscellaneous
  @logical/isAlways
 Deprecated
- evalpy
  octsympy_tests
